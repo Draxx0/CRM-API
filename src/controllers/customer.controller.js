@@ -6,14 +6,14 @@ const CustomerController = {
         const data = req.body
         const customer = new Customer(data)
 
-        const user = await User.findById(data.user)
+        // const user = await User.findById(data.user)
 
-        if(!user) {
-            return res.status(400).json({message: 'User not found'})
-        }
+        // if(!user) {
+        //     return res.status(400).json({message: 'User not found'})
+        // }
 
-        user.customers.push(customer)
-        await user.save()
+        // user.customers.push(customer)
+        // await user.save()
         await customer.save()
         res.send(customer)
     },
